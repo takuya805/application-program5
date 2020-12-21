@@ -17,10 +17,8 @@ class User < ApplicationRecord
       @user = User.where("name LIKE?", "%#{word}")
     elsif search == "perfect_match"
       @user = User.where("name LIKE?","#{word}")
-      p @user
     elsif search == "partial_match"
       @user = User.where("name LIKE?", "%#{word}%")
-      p @user
     else
       @user = User.all
     end
